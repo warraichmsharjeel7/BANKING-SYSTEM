@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-color: #030712;
+    color: #f3f4f6;
+}
+
+.gradient-bg { 
+    background: radial-gradient(circle at 50% 10%, #1e293b 0%, #0f172a 50%, #020617 100%);
+    min-height: 100vh;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .gradient-bg {
+        padding: 0.5rem;
+    }
+    .card-shadow {
+        padding: 1.25rem !important;
+    }
+}
+
+.main-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.page-section {
+    width: 100%;
+}
+
+.card-shadow { 
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); 
+}
+
+.receipt-paper { 
+    background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%); 
+}
+
+.fade-in { 
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.welcome-text {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.welcome-hover {
+    animation: welcomeGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes welcomeGlow {
+    0% { 
+        filter: drop-shadow(0 0 10px rgba(234, 179, 8, 0.3));
+    }
+    100% { 
+        filter: drop-shadow(0 0 20px rgba(234, 179, 8, 0.6));
+    }
+}
+
+::-webkit-scrollbar { 
+    width: 0px; 
+    background: transparent; 
+}

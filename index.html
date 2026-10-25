@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIK Products - Banking System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="gradient-bg min-h-screen text-slate-100 flex items-center justify-center">
+    <div class="main-container w-full max-w-4xl mx-auto p-4 md:p-6" style="scrollbar-width: none; -ms-overflow-style: none;">
+        <!-- Welcome Page -->
+        <div id="welcomePage" class="page-section">
+            <div class="text-center max-w-xl mx-auto fade-in py-10">
+                <div class="mb-8">
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 mb-3 welcome-hover">🏦 MIK PRODUCTS</h1>
+                    <p class="text-lg md:text-xl text-slate-300 tracking-wide welcome-text font-medium">Next-Generation Secure Banking Solutions</p>
+                </div>
+                
+                <div class="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-6 md:p-8 mb-8 border border-amber-500/30 shadow-2xl">
+                    <h2 class="text-xl font-bold text-amber-400 mb-2">🌟 Welcome to MIK Banking</h2>
+                    <p class="text-slate-300 text-sm mb-6">Your trusted partner for complete financial excellence</p>
+                    <div class="text-slate-200 text-xs md:text-sm space-y-3 text-left">
+                        <div class="flex items-center space-x-3 bg-slate-800/50 p-2.5 rounded-xl border border-slate-700/50">
+                            <span class="text-amber-400 text-base">🔐</span>
+                            <span>Bank-grade security with 256-bit encryption</span>
+                        </div>
+                        <div class="flex items-center space-x-3 bg-slate-800/50 p-2.5 rounded-xl border border-slate-700/50">
+                            <span class="text-emerald-400 text-base">📞</span>
+                            <span>24/7 customer support in multiple languages</span>
+                        </div>
+                        <div class="flex items-center space-x-3 bg-slate-800/50 p-2.5 rounded-xl border border-slate-700/50">
+                            <span class="text-sky-400 text-base">💰</span>
+                            <span>Competitive loan rates starting from 5.5%</span>
+                        </div>
+                        <div class="flex items-center space-x-3 bg-slate-800/50 p-2.5 rounded-xl border border-slate-700/50">
+                            <span class="text-purple-400 text-base">⚡</span>
+                            <span>Instant transactions and real-time updates</span>
+                        </div>
+                        <div class="flex items-center space-x-3 bg-slate-800/50 p-2.5 rounded-xl border border-slate-700/50">
+                            <span class="text-orange-400 text-base">📱</span>
+                            <span>Mobile-first design optimized for all devices</span>
+                        </div>
+                        <div class="flex items-center space-x-3 bg-slate-800/50 p-2.5 rounded-xl border border-slate-700/50">
+                            <span class="text-pink-400 text-base">🏆</span>
+                            <span>Award-winning banking services since 1997</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="enterSystem()" class="w-full sm:w-auto bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-slate-950 font-bold py-3.5 px-8 rounded-xl text-lg transition duration-300 transform hover:scale-105 shadow-xl shadow-amber-500/20 cursor-pointer">
+                    Enter System &rarr;
+                </button>
+            </div>
+        </div>
+
+        <!-- Main System -->
+        <div id="mainSystem" class="hidden page-section">
+            <!-- Header -->
+            <div class="text-center mb-6">
+                <h1 class="text-2xl md:text-3xl font-extrabold text-amber-400 mb-1 tracking-wide">🏦 MIK PRODUCTS</h1>
+                <p class="text-sm md:text-base text-slate-300 font-medium">Banking Management System</p>
+            </div>
+
+            <!-- Main Menu -->
+            <div id="mainMenu" class="w-full bg-slate-900/90 backdrop-blur-2xl rounded-3xl card-shadow p-6 md:p-8 border border-slate-700/80 shadow-2xl">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4 border-b border-slate-800 pb-4">
+                    <h2 class="text-lg md:text-xl font-bold text-slate-100 flex-1">MIK Banking Services</h2>
+                    <button onclick="goToWelcome()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-xl transition-all duration-200 border border-slate-700 shadow-md active:scale-95 cursor-pointer text-sm font-medium flex-shrink-0">
+                        &larr; Welcome
+                    </button>
+                </div>
+                
+                <div class="text-center mb-6">
+                    <div class="bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60 shadow-inner">
+                        <p class="text-amber-400 font-semibold mb-1 text-xs tracking-wider uppercase">SERVICES AVAILABLE</p>
+                        <p class="text-slate-300 text-xs">Complete banking solutions with advanced financial tools</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <button onclick="showOperation('deposit')" class="bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white font-semibold py-4 px-5 rounded-2xl transition duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-emerald-900/20 border border-emerald-500/30 text-sm flex items-center justify-center space-x-2 cursor-pointer">
+                        <span>💰</span> <span>Deposit Money</span>
+                    </button>
+                    <button onclick="showOperation('withdraw')" class="bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 text-white font-semibold py-4 px-5 rounded-2xl transition duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-rose-900/20 border border-rose-500/30 text-sm flex items-center justify-center space-x-2 cursor-pointer">
+                        <span>💳</span> <span>Withdraw Money</span>
+                    </button>
+                    <button onclick="showOperation('both')" class="bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-500 hover:to-violet-600 text-white font-semibold py-4 px-5 rounded-2xl transition duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-violet-900/20 border border-violet-500/30 text-sm flex items-center justify-center space-x-2 cursor-pointer">
+                        <span>🔄</span> <span>Both Operations</span>
+                    </button>
+                    <button onclick="showLoanPlans()" class="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold py-4 px-5 rounded-2xl transition duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-amber-900/20 border border-amber-500/30 text-sm flex items-center justify-center space-x-2 cursor-pointer">
+                        <span>🏠</span> <span>Loan Plans</span>
+                    </button>
+                    <button onclick="showLoanCalculator()" class="bg-gradient-to-r from-sky-600 to-blue-700 hover:from-sky-500 hover:to-blue-600 text-white font-semibold py-4 px-5 rounded-2xl transition duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-sky-900/20 border border-sky-500/30 sm:col-span-2 text-sm flex items-center justify-center space-x-2 cursor-pointer">
+                        <span>🧮</span> <span>Loan Calculator</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Operation Forms -->
+            <div id="operationForm" class="w-full bg-slate-900/90 backdrop-blur-2xl rounded-3xl card-shadow p-6 md:p-8 border border-slate-700/80 shadow-2xl hidden">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4 border-b border-slate-800 pb-4">
+                    <h3 id="operationTitle" class="text-xl sm:text-2xl font-bold text-amber-400 flex-1"></h3>
+                    <button onclick="showMainMenu()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-xl transition-all duration-200 border border-slate-700 shadow-md active:scale-95 cursor-pointer text-sm font-medium flex-shrink-0">
+                        &larr; Back
+                    </button>
+                </div>
+
+                <form id="bankForm" onsubmit="processTransaction(event)" class="space-y-5">
+                    <div>
+                        <label class="block text-slate-200 font-medium mb-2 text-sm">💼 Current Account Balance</label>
+                        <input type="number" id="currentAmount" step="0.01" min="0" required 
+                               class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-700 rounded-xl text-slate-100 placeholder-slate-500 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none shadow-inner font-medium text-sm transition">
+                    </div>
+
+                    <div id="depositSection" class="hidden">
+                        <label class="block text-slate-200 font-medium mb-2 text-sm">💰 Amount to Deposit</label>
+                        <input type="number" id="depositAmount" step="0.01" min="0.01" 
+                               class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-700 rounded-xl text-slate-100 placeholder-slate-500 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none shadow-inner font-medium text-sm transition">
+                    </div>
+
+                    <div id="withdrawSection" class="hidden">
+                        <label class="block text-slate-200 font-medium mb-2 text-sm">💳 Amount to Withdraw</label>
+                        <input type="number" id="withdrawAmount" step="0.01" min="0.01" 
+                               class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-700 rounded-xl text-slate-100 placeholder-slate-500 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none shadow-inner font-medium text-sm transition">
+                    </div>
+
+                    <div id="branchSection">
+                        <label class="block text-slate-200 font-medium mb-2 text-sm">🏢 Branch Number (Optional)</label>
+                        <input type="text" id="branchNumber" placeholder="Enter branch number" 
+                               class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-700 rounded-xl text-slate-100 placeholder-slate-500 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none shadow-inner font-medium text-sm transition">
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-slate-950 font-bold py-4 px-6 rounded-xl transition duration-300 transform hover:scale-[1.01] shadow-lg shadow-amber-500/20 cursor-pointer mt-2 text-sm">
+                        Process Transaction
+                    </button>
+                </form>
+            </div>
+
+            <!-- Receipt -->
+            <div id="receipt" class="w-full bg-slate-900/90 backdrop-blur-2xl rounded-3xl card-shadow p-6 md:p-8 border border-slate-700/80 shadow-2xl hidden">
+                <div class="receipt-paper p-6 rounded-2xl border-2 border-dashed border-slate-400 text-slate-800 bg-slate-50 shadow-inner">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-black text-slate-900 tracking-tight">🏦 MEEZAN BANK</h3>
+                        <p class="text-xs font-semibold text-slate-600 tracking-wider uppercase mt-1">TRANSACTION RECEIPT</p>
+                        <div class="w-full h-px bg-slate-300 my-4"></div>
+                    </div>
+
+                    <div id="receiptContent" class="space-y-3 text-slate-700 text-sm">
+                        <!-- Receipt content will be populated here -->
+                    </div>
+
+                    <div class="w-full h-px bg-slate-300 my-4"></div>
+                    <div class="text-center text-xs text-slate-500 space-y-1">
+                        <p>City: Karachi</p>
+                        <p>Contact No: 0321-232323</p>
+                        <p class="mt-2 font-bold text-slate-700">Thank you for banking with us!</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 mt-6">
+                    <button onclick="downloadReceipt()" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-300 shadow-md cursor-pointer text-sm">
+                        📥 Download
+                    </button>
+                    <button onclick="printReceipt()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-300 shadow-md cursor-pointer text-sm">
+                        🖨️ Print
+                    </button>
+                    <button onclick="showMainMenu()" class="flex-1 bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-300 shadow-md cursor-pointer text-sm">
+                        🏠 New Transaction
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loan Calculator -->
+            <div id="loanCalculator" class="w-full bg-slate-900/90 backdrop-blur-2xl rounded-3xl card-shadow p-6 md:p-8 border border-slate-700/80 shadow-2xl hidden">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4 border-b border-slate-800 pb-4">
+                    <h3 class="text-xl sm:text-2xl font-bold text-amber-400 flex-1">🧮 Loan Calculator</h3>
+                    <button onclick="showMainMenu()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-xl transition-all duration-200 border border-slate-700 shadow-md active:scale-95 cursor-pointer text-sm font-medium flex-shrink-0">
+                        &larr; Back
+                    </button>
+                </div>
+
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-slate-200 font-medium mb-2 text-sm">💰 Loan Amount ($)</label>
+                        <input type="number" id="loanAmount" min="1000" max="1000000" value="50000" 
+                               class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-700 rounded-xl text-slate-100 placeholder-slate-500 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none shadow-inner font-medium text-sm transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-slate-200 font-medium mb-2 text-sm">📊 Interest Rate (% per year)</label>
+                        <input type="number" id="interestRate" min="1" max="30" step="0.1" value="8.5" 
+                               class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-700 rounded-xl text-slate-100 placeholder-slate-500 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none shadow-inner font-medium text-sm transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-slate-200 font-medium mb-2 text-sm">⏰ Loan Term (years)</label>
+                        <input type="number" id="loanTerm" min="1" max="30" value="5" 
+                               class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-700 rounded-xl text-slate-100 placeholder-slate-500 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none shadow-inner font-medium text-sm transition">
+                    </div>
+
+                    <button onclick="calculateLoan()" class="w-full bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white font-semibold py-4 px-6 rounded-xl transition duration-300 transform hover:scale-[1.01] shadow-lg shadow-sky-900/20 cursor-pointer text-sm">
+                        Calculate Monthly Payment
+                    </button>
+
+                    <div id="calculatorResults" class="bg-slate-950/80 p-6 rounded-2xl border border-slate-800 backdrop-blur-lg shadow-xl hidden mt-4">
+                        <h4 class="text-base font-bold text-amber-400 mb-4 pb-2 border-b border-slate-800">📋 Calculation Results</h4>
+                        <div class="space-y-3 text-slate-200 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Monthly Payment:</span>
+                                <span id="monthlyPayment" class="font-bold text-emerald-400"></span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Total Amount Paid:</span>
+                                <span id="totalAmount" class="font-bold text-sky-400"></span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Total Interest:</span>
+                                <span id="totalInterest" class="font-bold text-rose-400"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loan Plans -->
+            <div id="loanPlans" class="w-full max-w-4xl mx-auto bg-slate-900/90 backdrop-blur-2xl rounded-3xl card-shadow p-6 md:p-8 border border-slate-700/80 shadow-2xl hidden">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4 border-b border-slate-800 pb-4">
+                    <h3 class="text-xl sm:text-2xl font-bold text-amber-400 flex-1">💳 Available Loan Plans</h3>
+                    <button onclick="showMainMenu()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-xl transition-all duration-200 border border-slate-700 shadow-md active:scale-95 cursor-pointer text-sm font-medium flex-shrink-0">
+                        &larr; Back
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    <!-- Personal Loan -->
+                    <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <div class="text-center mb-4">
+                                <div class="text-3xl mb-1">👤</div>
+                                <h4 class="text-lg font-bold text-sky-400">Personal Loan</h4>
+                            </div>
+                            <div class="space-y-2.5 text-xs text-slate-300 border-t border-slate-800 pt-3">
+                                <div class="flex justify-between"><span class="text-slate-400">Amount:</span><span class="font-semibold text-slate-200">$5k - $50k</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Interest Rate:</span><span class="font-semibold text-emerald-400">8.5% - 12%</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Duration:</span><span class="font-semibold text-slate-200">1 - 5 years</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Processing:</span><span class="font-semibold text-slate-200">2-3 days</span></div>
+                            </div>
+                        </div>
+                        <button onclick="applyLoan('Personal Loan')" class="w-full mt-5 bg-sky-600 hover:bg-sky-500 text-white font-medium py-2.5 px-4 rounded-xl transition duration-300 text-xs shadow cursor-pointer">
+                            Apply Now
+                        </button>
+                    </div>
+
+                    <!-- Home Loan -->
+                    <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <div class="text-center mb-4">
+                                <div class="text-3xl mb-1">🏠</div>
+                                <h4 class="text-lg font-bold text-emerald-400">Home Loan</h4>
+                            </div>
+                            <div class="space-y-2.5 text-xs text-slate-300 border-t border-slate-800 pt-3">
+                                <div class="flex justify-between"><span class="text-slate-400">Amount:</span><span class="font-semibold text-slate-200">$50k - $500k</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Interest Rate:</span><span class="font-semibold text-emerald-400">6.5% - 9%</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Duration:</span><span class="font-semibold text-slate-200">10 - 30 years</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Processing:</span><span class="font-semibold text-slate-200">7-10 days</span></div>
+                            </div>
+                        </div>
+                        <button onclick="applyLoan('Home Loan')" class="w-full mt-5 bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2.5 px-4 rounded-xl transition duration-300 text-xs shadow cursor-pointer">
+                            Apply Now
+                        </button>
+                    </div>
+
+                    <!-- Car Loan -->
+                    <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <div class="text-center mb-4">
+                                <div class="text-3xl mb-1">🚗</div>
+                                <h4 class="text-lg font-bold text-purple-400">Car Loan</h4>
+                            </div>
+                            <div class="space-y-2.5 text-xs text-slate-300 border-t border-slate-800 pt-3">
+                                <div class="flex justify-between"><span class="text-slate-400">Amount:</span><span class="font-semibold text-slate-200">$10k - $80k</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Interest Rate:</span><span class="font-semibold text-emerald-400">7% - 10%</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Duration:</span><span class="font-semibold text-slate-200">2 - 7 years</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Processing:</span><span class="font-semibold text-slate-200">3-5 days</span></div>
+                            </div>
+                        </div>
+                        <button onclick="applyLoan('Car Loan')" class="w-full mt-5 bg-purple-600 hover:bg-purple-500 text-white font-medium py-2.5 px-4 rounded-xl transition duration-300 text-xs shadow cursor-pointer">
+                            Apply Now
+                        </button>
+                    </div>
+
+                    <!-- Business Loan -->
+                    <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <div class="text-center mb-4">
+                                <div class="text-3xl mb-1">💼</div>
+                                <h4 class="text-lg font-bold text-amber-400">Business Loan</h4>
+                            </div>
+                            <div class="space-y-2.5 text-xs text-slate-300 border-t border-slate-800 pt-3">
+                                <div class="flex justify-between"><span class="text-slate-400">Amount:</span><span class="font-semibold text-slate-200">$25k - $1M</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Interest Rate:</span><span class="font-semibold text-emerald-400">9% - 15%</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Duration:</span><span class="font-semibold text-slate-200">1 - 10 years</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Processing:</span><span class="font-semibold text-slate-200">5-7 days</span></div>
+                            </div>
+                        </div>
+                        <button onclick="applyLoan('Business Loan')" class="w-full mt-5 bg-amber-600 hover:bg-amber-500 text-white font-medium py-2.5 px-4 rounded-xl transition duration-300 text-xs shadow cursor-pointer">
+                            Apply Now
+                        </button>
+                    </div>
+
+                    <!-- Education Loan -->
+                    <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <div class="text-center mb-4">
+                                <div class="text-3xl mb-1">🎓</div>
+                                <h4 class="text-lg font-bold text-indigo-400">Education Loan</h4>
+                            </div>
+                            <div class="space-y-2.5 text-xs text-slate-300 border-t border-slate-800 pt-3">
+                                <div class="flex justify-between"><span class="text-slate-400">Amount:</span><span class="font-semibold text-slate-200">$5k - $100k</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Interest Rate:</span><span class="font-semibold text-emerald-400">5% - 8%</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Duration:</span><span class="font-semibold text-slate-200">5 - 15 years</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Processing:</span><span class="font-semibold text-slate-200">3-4 days</span></div>
+                            </div>
+                        </div>
+                        <button onclick="applyLoan('Education Loan')" class="w-full mt-5 bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 px-4 rounded-xl transition duration-300 text-xs shadow cursor-pointer">
+                            Apply Now
+                        </button>
+                    </div>
+
+                    <!-- Emergency Loan -->
+                    <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <div class="text-center mb-4">
+                                <div class="text-3xl mb-1">🚨</div>
+                                <h4 class="text-lg font-bold text-rose-400">Emergency Loan</h4>
+                            </div>
+                            <div class="space-y-2.5 text-xs text-slate-300 border-t border-slate-800 pt-3">
+                                <div class="flex justify-between"><span class="text-slate-400">Amount:</span><span class="font-semibold text-slate-200">$1k - $25k</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Interest Rate:</span><span class="font-semibold text-emerald-400">10% - 18%</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Duration:</span><span class="font-semibold text-slate-200">6mo - 3yr</span></div>
+                                <div class="flex justify-between"><span class="text-slate-400">Processing:</span><span class="font-semibold text-slate-200">Same day</span></div>
+                            </div>
+                        </div>
+                        <button onclick="applyLoan('Emergency Loan')" class="w-full mt-5 bg-rose-600 hover:bg-rose-500 text-white font-medium py-2.5 px-4 rounded-xl transition duration-300 text-xs shadow cursor-pointer">
+                            Apply Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="w-full max-w-2xl mx-auto bg-rose-950/90 backdrop-blur-xl border border-rose-500/50 text-rose-200 px-5 py-4 rounded-2xl shadow-xl hidden mt-4">
+                <div class="flex items-center space-x-3 text-sm">
+                    <span class="text-xl">⚠️</span>
+                    <span id="errorText" class="font-medium"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
